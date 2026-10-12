@@ -11,10 +11,12 @@ from typing import List, Tuple
 def simple(N: int) -> Tuple[List[Tuple[float, float]], List[int]]:
     """
     Simple linear dataset - points on left vs right.
-    
-    TODO: Add complete docstring in Task 0.5
-    
     Classification rule: x_coord >= 0.5 -> class 1, else class 0
+
+        Args: 
+            N: Number of points to be generated
+        Return:
+            Tuple of (points,labels)
     """
     points = []
     labels = []
@@ -29,10 +31,12 @@ def simple(N: int) -> Tuple[List[Tuple[float, float]], List[int]]:
 def diag(N: int) -> Tuple[List[Tuple[float, float]], List[int]]:
     """
     Diagonal dataset - points above vs below main diagonal.
-    
-    TODO: Add complete docstring in Task 0.5
-    
     Classification rule: x + y >= 1.0 -> class 1, else class 0
+
+        Args: 
+            N: Number of points to be generated
+        Return:
+            Tuple of (points,labels)
     """
     points = []
     labels = []
@@ -47,10 +51,12 @@ def diag(N: int) -> Tuple[List[Tuple[float, float]], List[int]]:
 def split(N: int) -> Tuple[List[Tuple[float, float]], List[int]]:
     """
     Split dataset - points in center vs edges.
-    
-    TODO: Add complete docstring in Task 0.5
-    
     Classification rule: 0.2 <= x <= 0.8 -> class 0, else class 1
+
+        Args: 
+            N: Number of points to be generated
+        Return:
+            Tuple of (points,labels)
     """
     points = []
     labels = []
@@ -65,12 +71,14 @@ def split(N: int) -> Tuple[List[Tuple[float, float]], List[int]]:
 def xor(N: int) -> Tuple[List[Tuple[float, float]], List[int]]:
     """
     XOR dataset - requires non-linear separation.
-    
-    TODO: Add complete docstring in Task 0.5
-    
     Classification rule:
         (x < 0.5 and y < 0.5) or (x >= 0.5 and y >= 0.5) -> class 0
         else -> class 1
+
+        Args: 
+            N: Number of points to be generated
+        Return:
+            Tuple of (points,labels)
     """
     points = []
     labels = []
@@ -81,3 +89,17 @@ def xor(N: int) -> Tuple[List[Tuple[float, float]], List[int]]:
         same_side = (x < 0.5) == (y < 0.5)
         labels.append(0 if same_side else 1)
     return points, labels
+
+
+# For Test 
+
+# def simple_classifier(x: float, y: float) -> int:
+#     """Manual classifier for simple dataset."""
+#     return 1 if x >= 0.5 else 0
+
+
+# X, y_true = simple(1000)
+# correct = sum(1 for (x, y), label in zip(X, y_true)
+#               if simple_classifier(x, y) == label)
+# accuracy = correct / len(X)
+# print(f"Accuracy: {accuracy:.2%}")
