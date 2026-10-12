@@ -5,7 +5,7 @@ Welcome to MiniTorch! You'll build a deep learning library from scratch to under
 ## Project Structure
 
 ```
-minitorch/
+minitorch-from-scratch/
 ├── minitorch/           # Main package
 │   ├── operators.py     # Mathematical operations (Task 0.1)
 │   ├── module.py        # Parameter management (Task 0.4)  
